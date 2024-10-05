@@ -44,7 +44,7 @@ function animateElement(element) {
 function convertToUpperCase() {
     const input = document.getElementById('input').value;
     if (!isGreek(input)) {
-        showError('Lütfen sadece Yunanca karakterler girin!');
+        showError('Please enter Greek characters only!');
         return;
     }
     clearError();
