@@ -16,7 +16,7 @@ function animateTitle() {
 }
 
 function isGreek(text) {
-    const greekRegex = /^[\u0370-\u03FF\u1F00-\u1FFF\s]+$/;
+    const greekRegex = /^[\u0370-\u03FF\u1F00-\u1FFF\u2000-\u206F\u0020-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]+$/;
     return greekRegex.test(text);
 }
 
@@ -44,7 +44,7 @@ function animateElement(element) {
 function convertToUpperCase() {
     const input = document.getElementById('input').value;
     if (!isGreek(input)) {
-        showError('Please enter Greek characters only!');
+        showError('Please enter Greek characters and punctuation marks only!');
         return;
     }
     clearError();
@@ -55,7 +55,7 @@ function convertToUpperCase() {
 function convertToLowerCase() {
     const input = document.getElementById('input').value;
     if (!isGreek(input)) {
-        showError('Please enter Greek characters only!');
+        showError('Please enter Greek characters and punctuation marks only!');
         return;
     }
     clearError();
